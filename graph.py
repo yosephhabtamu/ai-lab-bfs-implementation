@@ -85,19 +85,6 @@ class Graph:
         pass
 
 
-a = Node('A')
-b = Node('B')
-c = Node('C')
-d = Node('D')
-e = Node('E')
-
-g = Graph()
-g.add_edge(a, e)
-g.add_edge(e, c)
-g.add_edge(a, d)
-g.add_edge(c, b)
-g.add_edge(b, a)
-g.search(a, b)
 
 
 for iv, (k, v) in enumerate(g.verticies.items()):
