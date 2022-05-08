@@ -79,7 +79,7 @@ class Graph:
             path.append(vertex)
             checked_dict[self.verticies[vertex].name] = True
         print(path)
-        print(checked_dict)
+        
 
     def to_aj_matrix(self):
         pass
