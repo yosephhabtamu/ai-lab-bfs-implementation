@@ -1,0 +1,66 @@
+node oradea 1
+node zerind 1
+node arad 1
+node timisoara 1
+node lugoj 1
+node mehadia 1
+node drobeta 1
+node craiova 1
+node pitesti 1
+node rimnicu_vilcea 1
+node sibiu 1
+node fagaras 1
+node bucharest 1
+node giurgiu 1
+node urziceni 1
+node hirsova 1
+node eforie 1
+node vaslui 1
+node iasi 1
+node neamt 1
+
+
+edge oradea sibiu 151
+edge oradea zerind 71
+edge zerind arad 75
+edge arad sibiu 140
+edge arad timisoara 118
+edge timisoara lugoj 111
+edge lugoj mehadia 70
+edge mehadia drobeta 75
+edge drobeta craiova 120
+edge craiova rimnicu_vilcea 146
+edge rimnicu_vilcea pitesti 97
+edge sibiu rimnicu_vilcea 80
+edge sibiu fagaras 99
+edge fagaras bucharest 211
+edge bucharest giurgiu 90
+edge bucharest urziceni 85
+edge urziceni hirsova 98
+edge hirsova eforie 86
+edge urziceni vaslui 142
+edge vaslui iasi 92
+edge iasi neamt 87
+edge craiova pitesti 138
+edge pitesti bucharest 101
+
+heuristic oradea 47.0465005 21.9189438
+heuristic zerind 46.622511 21.517419
+heuristic arad 46.166667 21.316667
+heuristic timisoara 45.759722 21.23
+heuristic lugoj 45.68861 21.90306
+heuristic mehadia 44.904114 22.364516
+heuristic drobeta 44.636923 22.659734
+heuristic craiova 44.333333 23.816667000000052
+heuristic sibiu 45.792784 24.152068999999983
+heuristic rimnicu_vilcea 45.099675 24.369318
+heuristic fagaras 45.8416403 24.9730954
+heuristic pitesti 44.860556 24.867778000000044
+heuristic giurgiu 43.9037076 25.9699265
+heuristic bucharest 44.439663 26.096306
+heuristic urziceni 44.7165317 26.641121
+heuristic eforie 44.058422 28.633607
+heuristic hirsova 44.6833333 27.9333333
+heuristic vaslui 46.640692 27.727647
+heuristic iasi 47.156944 27.590278000000012
+heuristic neamt 47.2 26.3666667
