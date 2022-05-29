@@ -34,5 +34,4 @@
 #         check.append(coordinate)
 #         print('heuristic Node_' + str(i), str(coordinate[0]),
 #               str(coordinate[1]))
-#     if len(check) == 250:
-#         break
+#
