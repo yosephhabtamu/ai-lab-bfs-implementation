@@ -1,5 +1,7 @@
 
+from cProfile import label
 from time import *
+from matplotlib import pyplot as plt
 
 
 from graph_algorithms_implemetations import *
@@ -25,11 +27,8 @@ def create_graph(file_name):
             g.add_edge(left, right, weight)
         elif arr[0] == 'heuristic':
             heuristic_data[arr[1]] = (arr[2], arr[3])
+    file.close()
     return g, heuristic_data
-
-
-g = create_graph('graph_50_nodes.txt')[0]
-heuristic_from_file = create_graph('graph_50_nodes.txt')[1]
 
 
 def djk_a_star_path(start_node: str, end_node: str, previous_node: dict):
@@ -46,8 +45,8 @@ def djk_a_star_path(start_node: str, end_node: str, previous_node: dict):
 
 
 def BFS_DFS_path(start_node, end_node, previous_node: dict):
-
     path = [end_node]
+
     prev = end_node
     while True:
         for key, value in previous_node.items():
@@ -62,7 +61,7 @@ def BFS_DFS_path(start_node, end_node, previous_node: dict):
     return ' => '.join(path)
 
 
-def BFS_DFS_solution_length(start_node: str, end_node: str, func):
+def BFS_DFS_solution_length(graph, start_node: str, end_node: str, func):
     result = func(start_node, end_node)
 
     path = BFS_DFS_path(start_node, end_node, result[0])
@@ -70,95 +69,98 @@ def BFS_DFS_solution_length(start_node: str, end_node: str, func):
     path = path.split(" => ")
     sum = 0
     for i in range(len(path)-1):
-        sum += g.edges[(path[i], path[i+1])].weight
+        sum += graph.edges[(path[i], path[i+1])].weight
 
     return sum
 
 
-def BFS_DFS_analysis(func):
+def BFS_DFS_analysis(graph, func):
     final_time_each_node = {}
     soln_len = {}
+    length = len(graph._verticies)
     avg_time = 0
     avg_soln_len = 0
 
-    for i in g._verticies:
+    for i in graph._verticies:
         grand_mean = 0
         total_soln_len = 0
         sum = 0
-        for j in g._verticies:
+        for j in graph._verticies:
 
             if i == j:
                 continue
             else:
-                solution_length = BFS_DFS_solution_length(i, j, func)
+                solution_length = BFS_DFS_solution_length(graph, i, j, func)
                 measured_time = func(i, j)
                 start = measured_time[-2]
                 end = measured_time[-1]
                 total_soln_len += solution_length
-                sum += (end-start)/len(g._verticies)
+                sum += (end-start)/length
+
         grand_mean += sum
-        final_soln_len = total_soln_len/len(g._verticies)
+        final_soln_len = total_soln_len/length
         soln_len[i] = final_soln_len
         final_time_each_node[i] = grand_mean
     for i in final_time_each_node.values():
         avg_time += i
     for i in soln_len.values():
         avg_soln_len += i
-    avg_soln_len = avg_soln_len / len(g._verticies)
-    avg_time = avg_time / len(g._verticies)
+    avg_soln_len = avg_soln_len / length
+    avg_time = avg_time / length
 
     return avg_time, avg_soln_len
 
 
-def a_star_analysis():
+def a_star_analysis(graph, heuristic_from_file: dict):
     final_time_each_node = {}
     avg_time = 0
     avg_soln_len = 0
     soln_len = {}
+    length = len(graph._verticies)
 
-    for i in g._verticies:
+    for i in graph._verticies:
         total_soln_len = 0
         grand_mean = 0
         sum = 0
-        for j in g._verticies:
+        for j in graph._verticies:
 
             if i == j:
                 continue
             else:
 
-                result = g.a_star_search(i, j, heuristic_from_file)
+                result = graph.a_star_search(i, j, heuristic_from_file)
                 solution_length = result[0][j]
                 start = result[2]
                 end = result[3]
                 total_soln_len += solution_length
-                sum += (end-start)/len(g._verticies)
+                sum += (end-start)/length
 
         grand_mean += sum
-        final_soln_len = total_soln_len/len(g._verticies)
+        final_soln_len = total_soln_len/length
         soln_len[i] = final_soln_len
         final_time_each_node[i] = grand_mean
     for i in final_time_each_node.values():
         avg_time += i
     for i in soln_len.values():
         avg_soln_len += i
-    avg_time = avg_time / len(g._verticies)
-    avg_soln_len = avg_soln_len/len(g._verticies)
+    avg_time = avg_time / length
+    avg_soln_len = avg_soln_len/length
 
     return avg_time, avg_soln_len
 
 
-def DJK_analysis():
+def DJK_analysis(graph):
     final_time_each_node = {}
     avg_time = 0
     avg_soln_len = 0
-    length = len(g._verticies)
+    length = len(graph._verticies)
     soln_len = {}
 
-    for i in g._verticies:
+    for i in graph._verticies:
         total_soln_len = 0
         grand_mean = 0
         sum = 0
-        result = g.dijkstra_algorithm(i)
+        result = graph.dijkstra_algorithm(i)
 
         for j in result[0]:
             solution_length = result[0][j]
@@ -171,7 +173,8 @@ def DJK_analysis():
         final_soln_len = total_soln_len/length
         soln_len[i] = final_soln_len
         final_time_each_node[i] = grand_mean
-        print(i)
+        if length > 30:
+            print('analizing', i)
     for i in final_time_each_node.values():
         avg_time += i
     for i in soln_len.values():
@@ -182,7 +185,16 @@ def DJK_analysis():
     return avg_time, avg_soln_len
 
 
-# print('bfs: ', BFS_DFS_analysis(g.BFS_search))
-# print('dfs: ', BFS_DFS_analysis(g.DFS_search))
-# print('DJK: ', DJK_analysis())
-print('a star: ', a_star_analysis())
+romania = create_graph('romania_roads.txt')
+romania_graph = romania[0]
+romania_heuristic = romania[1]
+
+# print('dfs: ', BFS_DFS_analysis(romania_graph, romania_graph.DFS_search))
+# print('bfs: ', BFS_DFS_analysis(romania_graph, romania_graph.BFS_search))
+# print('DJK: ', DJK_analysis(romania_graph))
+# print('a star: ', a_star_analysis(romania_graph, romania_heuristic))
+
+
+# soln len vs nodesize
+# time vs node size
+#

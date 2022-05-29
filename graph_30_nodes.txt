@@ -1,0 +1,212 @@
+
+node Node_2 1
+node Node_3 1
+node Node_4 1
+node Node_5 1
+node Node_6 1
+node Node_7 1
+node Node_8 1
+node Node_9 1
+node Node_10 1
+node Node_11 1
+node Node_12 1
+node Node_13 1
+node Node_14 1
+node Node_15 1
+node Node_16 1
+node Node_17 1
+node Node_18 1
+node Node_19 1
+node Node_20 1
+node Node_21 1
+node Node_22 1
+node Node_23 1
+node Node_24 1
+node Node_25 1
+node Node_26 1
+node Node_27 1
+node Node_28 1
+node Node_29 1
+node Node_30 1
+
+edge Node_11 Node_14 100
+edge Node_3 Node_20 62
+edge Node_10 Node_27 27
+edge Node_3 Node_23 100
+edge Node_3 Node_22 93
+edge Node_6 Node_29 33
+edge Node_17 Node_5 24
+edge Node_23 Node_24 96
+edge Node_24 Node_19 28
+edge Node_17 Node_6 76
+edge Node_7 Node_27 79
+edge Node_11 Node_15 86
+edge Node_15 Node_12 79
+edge Node_28 Node_25 83
+edge Node_28 Node_9 51
+edge Node_30 Node_6 83
+edge Node_18 Node_2 72
+edge Node_16 Node_24 72
+edge Node_15 Node_25 31
+edge Node_9 Node_4 66
+edge Node_7 Node_23 32
+edge Node_7 Node_30 75
+edge Node_20 Node_26 32
+edge Node_4 Node_29 61
+edge Node_19 Node_28 33
+edge Node_30 Node_8 81
+edge Node_5 Node_21 42
+edge Node_28 Node_15 99
+edge Node_10 Node_30 40
+edge Node_11 Node_16 98
+edge Node_27 Node_14 61
+edge Node_10 Node_16 79
+edge Node_18 Node_9 63
+edge Node_3 Node_13 38
+edge Node_25 Node_17 91
+edge Node_2 Node_27 80
+edge Node_18 Node_11 100
+edge Node_9 Node_20 79
+edge Node_2 Node_30 22
+edge Node_14 Node_12 50
+edge Node_8 Node_11 29
+edge Node_15 Node_3 71
+edge Node_2 Node_21 87
+edge Node_21 Node_10 53
+edge Node_20 Node_13 52
+edge Node_22 Node_14 83
+edge Node_27 Node_3 65
+edge Node_7 Node_8 24
+edge Node_28 Node_3 30
+edge Node_8 Node_25 49
+edge Node_3 Node_21 67
+edge Node_25 Node_12 70
+edge Node_7 Node_12 74
+edge Node_30 Node_29 33
+edge Node_21 Node_9 50
+edge Node_27 Node_13 76
+edge Node_21 Node_29 20
+edge Node_22 Node_11 28
+edge Node_17 Node_29 21
+edge Node_26 Node_30 58
+edge Node_21 Node_28 57
+edge Node_2 Node_12 32
+edge Node_18 Node_4 31
+edge Node_9 Node_25 79
+edge Node_25 Node_30 77
+edge Node_11 Node_23 92
+edge Node_27 Node_29 23
+edge Node_6 Node_13 78
+edge Node_7 Node_29 79
+edge Node_28 Node_10 62
+edge Node_3 Node_18 77
+edge Node_17 Node_8 99
+edge Node_6 Node_4 99
+edge Node_13 Node_29 79
+edge Node_26 Node_22 81
+edge Node_16 Node_9 94
+edge Node_22 Node_28 43
+edge Node_28 Node_6 22
+edge Node_6 Node_20 68
+edge Node_26 Node_12 34
+edge Node_24 Node_25 78
+edge Node_9 Node_12 62
+edge Node_19 Node_13 27
+edge Node_25 Node_27 31
+edge Node_10 Node_19 99
+edge Node_10 Node_13 37
+edge Node_4 Node_3 51
+edge Node_26 Node_6 24
+edge Node_5 Node_11 21
+edge Node_23 Node_10 97
+edge Node_25 Node_20 93
+edge Node_25 Node_19 63
+edge Node_17 Node_21 79
+edge Node_2 Node_24 89
+edge Node_10 Node_9 96
+edge Node_7 Node_3 53
+edge Node_16 Node_14 86
+edge Node_24 Node_29 83
+edge Node_15 Node_26 92
+edge Node_15 Node_30 66
+edge Node_30 Node_20 22
+edge Node_12 Node_29 78
+edge Node_20 Node_23 66
+edge Node_2 Node_9 27
+edge Node_4 Node_13 46
+edge Node_12 Node_6 87
+edge Node_24 Node_10 42
+edge Node_11 Node_28 96
+edge Node_24 Node_4 20
+edge Node_6 Node_10 87
+edge Node_27 Node_9 60
+edge Node_29 Node_2 92
+edge Node_17 Node_3 20
+edge Node_21 Node_16 97
+edge Node_24 Node_13 85
+edge Node_6 Node_15 54
+edge Node_16 Node_18 34
+edge Node_19 Node_18 96
+edge Node_30 Node_21 100
+edge Node_22 Node_5 65
+edge Node_22 Node_12 45
+edge Node_30 Node_17 80
+edge Node_28 Node_13 56
+edge Node_2 Node_22 88
+edge Node_24 Node_26 94
+edge Node_20 Node_18 58
+edge Node_12 Node_5 44
+edge Node_15 Node_19 66
+edge Node_3 Node_25 49
+edge Node_7 Node_28 23
+edge Node_2 Node_8 49
+edge Node_17 Node_18 42
+edge Node_13 Node_12 86
+edge Node_29 Node_5 65
+edge Node_25 Node_11 66
+edge Node_19 Node_27 21
+edge Node_25 Node_10 86
+edge Node_13 Node_8 58
+edge Node_2 Node_7 44
+edge Node_8 Node_22 33
+edge Node_17 Node_16 51
+edge Node_2 Node_6 85
+edge Node_3 Node_26 29
+edge Node_20 Node_16 22
+edge Node_17 Node_27 31
+edge Node_4 Node_17 27
+edge Node_4 Node_8 28
+edge Node_27 Node_20 93
+edge Node_6 Node_5 79
+edge Node_30 Node_22 89
+
+
+heuristic Node_2 19 13
+heuristic Node_3 15 24
+heuristic Node_4 21 2
+heuristic Node_5 6 10
+heuristic Node_6 1 18
+heuristic Node_7 12 21
+heuristic Node_8 4 25
+heuristic Node_9 22 2
+heuristic Node_10 13 28
+heuristic Node_11 16 9
+heuristic Node_12 8 13
+heuristic Node_13 30 8
+heuristic Node_14 7 20
+heuristic Node_15 24 12
+heuristic Node_16 2 10
+heuristic Node_17 4 2
+heuristic Node_18 22 30
+heuristic Node_19 30 15
+heuristic Node_20 23 30
+heuristic Node_21 21 17
+heuristic Node_22 16 19
+heuristic Node_23 12 12
+heuristic Node_24 2 0
+heuristic Node_25 2 20
+heuristic Node_26 27 20
+heuristic Node_27 17 19
+heuristic Node_28 24 8
+heuristic Node_29 5 2
+heuristic Node_30 5 17

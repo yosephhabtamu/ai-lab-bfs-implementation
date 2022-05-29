@@ -1,0 +1,113 @@
+node Node_1 1
+node Node_2 1
+node Node_3 1
+node Node_4 1
+node Node_5 1
+node Node_6 1
+node Node_7 1
+node Node_8 1
+node Node_9 1
+node Node_10 1
+node Node_11 1
+node Node_12 1
+node Node_13 1
+node Node_14 1
+node Node_15 1
+node Node_16 1
+node Node_17 1
+node Node_18 1
+node Node_19 1
+node Node_20 1
+
+
+edge Node_14 Node_16 59
+edge Node_19 Node_2 64
+edge Node_14 Node_10 80
+edge Node_11 Node_18 81
+edge Node_7 Node_20 98
+edge Node_1 Node_19 89
+edge Node_20 Node_14 95
+edge Node_15 Node_13 45
+edge Node_16 Node_3 45
+edge Node_16 Node_9 21
+edge Node_8 Node_17 81
+edge Node_3 Node_9 27
+edge Node_13 Node_12 95
+edge Node_10 Node_6 61
+edge Node_9 Node_7 57
+edge Node_1 Node_10 85
+edge Node_5 Node_2 68
+edge Node_16 Node_20 79
+edge Node_8 Node_9 89
+edge Node_11 Node_1 38
+edge Node_18 Node_12 81
+edge Node_12 Node_5 76
+edge Node_19 Node_11 70
+edge Node_14 Node_1 51
+edge Node_11 Node_2 98
+edge Node_14 Node_8 91
+edge Node_12 Node_17 72
+edge Node_10 Node_11 29
+edge Node_17 Node_11 39
+edge Node_13 Node_11 95
+edge Node_15 Node_3 31
+edge Node_19 Node_13 100
+edge Node_10 Node_16 94
+edge Node_14 Node_19 54
+edge Node_15 Node_1 39
+edge Node_14 Node_18 46
+edge Node_8 Node_18 32
+edge Node_10 Node_5 30
+edge Node_18 Node_15 96
+edge Node_1 Node_13 98
+edge Node_12 Node_11 39
+edge Node_20 Node_1 57
+edge Node_16 Node_1 57
+edge Node_3 Node_12 60
+edge Node_6 Node_17 30
+edge Node_3 Node_17 21
+edge Node_11 Node_3 70
+edge Node_4 Node_13 67
+edge Node_2 Node_7 93
+edge Node_9 Node_1 72
+edge Node_12 Node_10 63
+edge Node_19 Node_18 83
+edge Node_7 Node_17 99
+edge Node_13 Node_18 71
+edge Node_16 Node_8 40
+edge Node_12 Node_6 68
+edge Node_9 Node_10 21
+edge Node_13 Node_6 80
+edge Node_7 Node_15 33
+edge Node_9 Node_17 20
+edge Node_19 Node_12 46
+edge Node_16 Node_17 31
+edge Node_6 Node_1 85
+edge Node_18 Node_3 52
+edge Node_16 Node_7 44
+edge Node_6 Node_4 74
+edge Node_2 Node_17 59
+edge Node_18 Node_20 85
+edge Node_4 Node_15 61
+edge Node_3 Node_1 24
+
+heuristic Node_1 19 12
+heuristic Node_2 14 4
+heuristic Node_3 16 1
+heuristic Node_4 1 14
+heuristic Node_5 16 4
+heuristic Node_6 7 12
+heuristic Node_7 10 3
+heuristic Node_8 10 14
+heuristic Node_9 8 12
+heuristic Node_10 17 14
+heuristic Node_11 18 16
+heuristic Node_12 20 18
+heuristic Node_13 17 20
+heuristic Node_14 4 7
+heuristic Node_15 1 15
+heuristic Node_16 3 12
+heuristic Node_17 12 14
+heuristic Node_18 17 3
+heuristic Node_19 19 17
+heuristic Node_20 12 4

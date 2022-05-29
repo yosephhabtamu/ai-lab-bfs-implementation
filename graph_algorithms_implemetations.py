@@ -53,20 +53,19 @@ class Graph:
         right.connect(left)
 
     def heuristic_function(self, start, destination, heuristic_data):
-        lon1 = radians(eval(heuristic_data[start][1]))
-        lon2 = radians(eval(heuristic_data[destination][1]))
-        lat1 = radians(eval(heuristic_data[start][0]))
-        lat2 = radians(eval(heuristic_data[destination][0]))
-
+        lon1 = radians(float(heuristic_data[start][1]))
+        lon2 = radians(float(heuristic_data[destination][1]))
+        lat1 = radians(float(heuristic_data[start][0]))
+        lat2 = radians(float(heuristic_data[destination][0]))
         # Haversine formula
         dlon = lon2 - lon1
         dlat = lat2 - lat1
         a = sin(dlat / 2)**2 + cos(lat1) * cos(lat2) * sin(dlon / 2)**2
 
         c = 2 * asin(sqrt(a))
-        r = 6371
+        rad = 6371
 
-        return(c * r)
+        return(c * rad)
 
     def BFS_search(self, a: str, b: str):
         a = self._verticies[a]
@@ -88,7 +87,9 @@ class Graph:
         # BFS search algorithm starts here
         start = time.time()
         while tracker != []:
+
             vertex = tracker.pop(0)
+
             lst = []
             for i in self._verticies[vertex].edge_list:
 
@@ -98,6 +99,7 @@ class Graph:
                     path[vertex] = lst
             checked_dict[vertex] = True
         end = time.time()
+
         return path, start, end
 
     def DFS_search(self, a: str, b: str):
