@@ -7,8 +7,8 @@ from graph_analysis import *
 
 class Centrality_measure:
     def __init__(self, file_name: str) -> None:
-        self.graph = read_file(file_name)[0]
-        self.heuristic = read_file(file_name)[1]
+        self.graph = create_graph(file_name)[0]
+        self.heuristic = create_graph(file_name)[1]
 
     def find_degree_of_vertex(self, vertex: Node):
         return len(vertex.edge_list)
