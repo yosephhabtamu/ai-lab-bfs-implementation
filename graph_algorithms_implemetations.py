@@ -67,32 +67,30 @@ class Graph:
 
         return(c * rad)
 
+# the BFS_search method accepts initial and end node names and
+# computes the path through the graph and returns a dictionary
+# with a name of the node as a string and a list of its edges
+# along with start and end time for the algorithm
+
     def BFS_search(self, a: str, b: str):
         a = self._verticies[a]
         b = self._verticies[b]
-
         # A list used as a queue to store the neighboring nodes
         tracker = [a.name]
-
         # a list used to display the route taken by the algorithm
         # to find the search result
         path = {}
-
         # setting up a dictionary to keep track of visited node
         # Takes the node.name as a key and boolean as a value
         checked_dict = {}
         for i in self._verticies:
             checked_dict[i] = False
-
         # BFS search algorithm starts here
         start = time.time()
         while tracker != []:
-
             vertex = tracker.pop(0)
-
             lst = []
             for i in self._verticies[vertex].edge_list:
-
                 if checked_dict[i[1]] == False:
                     tracker.append(i[1])
                     lst.append(i[1])
@@ -156,14 +154,11 @@ class Graph:
                 start_node = self._verticies[i[0]]
                 end_node = self._verticies[i[1]]
                 check_if_visited = visited.get(end_node)
-
                 total_weight = shortest_distance_from_initial[i[0]
                                                               ] + self.edges[i].weight
-
                 if total_weight < shortest_distance_from_initial[i[1]]:
                     shortest_distance_from_initial[i[1]] = total_weight
                     previous_vertex_from_the_node[end_node.name] = start_node.name
-
                 if check_if_visited == False:
                     heapq.heappush(
                         unvisited_nodes, (shortest_distance_from_initial[i[1]], end_node.name))
@@ -172,11 +167,9 @@ class Graph:
         return shortest_distance_from_initial, previous_vertex_from_the_node, start, end
 
     def a_star_search(self, a: str, b: str, heuristic_value):
-
         shortest_distance = {a: 0}
         previous_vertex_from_the_node = {}
         total_heuristic = {}
-
         visited = {a: False}
         unvisited_nodes = []
         heuristic = {}
@@ -190,15 +183,14 @@ class Graph:
             heuristic[i] = self.heuristic_function(
                 i, b, heuristic_value)
             shortest_distance[i] = inf
-        start = time.time()
 
+        start = time.time()
         while visited[b] != True:
             next_smallest_node = self._verticies[heapq.heappop(
                 unvisited_nodes)[1]]
             for i in next_smallest_node.edge_list:
                 start_node = i[0]
                 end_node = i[1]
-
                 current_heuristic = shortest_distance[i[0]] + \
                     float(heuristic[end_node]) + self.edges[i].weight
                 total_distance = shortest_distance[i[0]] + self.edges[i].weight
@@ -206,10 +198,8 @@ class Graph:
                     shortest_distance[i[1]] = total_distance
                     previous_vertex_from_the_node[end_node] = start_node
                     total_heuristic[i[1]] = current_heuristic
-
                     heapq.heappush(
                         unvisited_nodes, (current_heuristic, end_node))
             visited[start_node] = True
         end = time.time()
-
         return shortest_distance, previous_vertex_from_the_node, start, end

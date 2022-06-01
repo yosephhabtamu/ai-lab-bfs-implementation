@@ -173,8 +173,7 @@ def DJK_analysis(graph):
         final_soln_len = total_soln_len/length
         soln_len[i] = final_soln_len
         final_time_each_node[i] = grand_mean
-        if length > 30:
-            print('analizing', i)
+
     for i in final_time_each_node.values():
         avg_time += i
     for i in soln_len.values():
@@ -185,16 +184,38 @@ def DJK_analysis(graph):
     return avg_time, avg_soln_len
 
 
-romania = create_graph('romania_roads.txt')
+romania = create_graph('graph_50_nodes.txt')
 romania_graph = romania[0]
 romania_heuristic = romania[1]
 
-# print('dfs: ', BFS_DFS_analysis(romania_graph, romania_graph.DFS_search))
-# print('bfs: ', BFS_DFS_analysis(romania_graph, romania_graph.BFS_search))
-# print('DJK: ', DJK_analysis(romania_graph))
-# print('a star: ', a_star_analysis(romania_graph, romania_heuristic))
+
+def analyze(graph, heuristic):
+
+    print('dfs result: Time(seconds)', BFS_DFS_analysis(graph, graph.DFS_search)
+          [0], '\tsolution(km)', BFS_DFS_analysis(graph, graph.DFS_search)[1])
+    print('bfs result: Time(seconds)', BFS_DFS_analysis(graph, graph.BFS_search)
+          [0], '\tsolution(km)', BFS_DFS_analysis(graph, graph.BFS_search)[1])
+    print('DJK result: Time(seconds)', DJK_analysis(graph)[
+          0], '\tsolution(km)', DJK_analysis(graph)[1])
+    print('a star result: Time(seconds)', a_star_analysis(graph, heuristic)
+          [0], '\tsolution(km)', a_star_analysis(graph, heuristic)[1])
 
 
-# soln len vs nodesize
-# time vs node size
-#
+# analyze(romania_graph, romania_heuristic)
+
+
+# print('The BFS search result:')
+# print(BFS_DFS_path('iasi', 'lugoj',
+#       romania_graph.BFS_search('iasi', 'lugoj')[0]))
+
+# print('The DFS search result:')
+# print(BFS_DFS_path('iasi', 'lugoj',
+#       romania_graph.DFS_search('iasi', 'lugoj')[0]))
+
+# print('The djikstra search result:')
+# print(djk_a_star_path('zerind', 'lugoj',
+#       romania_graph.dijkstra_algorithm('zerind', 'lugoj')[1]))
+
+# print('The a star search result:')
+# print(djk_a_star_path('iasi', 'lugoj',
+#       romania_graph.a_star_search('iasi', 'lugoj', romania_heuristic)[1]))
